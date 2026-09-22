@@ -11,7 +11,7 @@ export const COUPLE_NAMES = {
 } as const;
 
 /** Apni couple photo — file: public/photos/couple-family.png */
-export const MAIN_COUPLE_PHOTO = "/photos/couple-family.png";
+export const MAIN_COUPLE_PHOTO = "/Altaf-Weds-Sanjida/photos/couple-family.png";
 
 export function getCoupleLabel() {
   return `${COUPLE_NAMES.groom} & ${COUPLE_NAMES.bride}`;
@@ -90,7 +90,7 @@ export const WEDDING_CONFIG = {
   eventDateDisplay: "Friday 11 December 2026",
 
   // ─── 🎵 BACKGROUND MUSIC (Shukran Allah — Dropbox; dl=1 for playback) ───
-  musicUrl: "/photos/Aaj-Sajeya.mp3",
+  musicUrl: "/Altaf-Weds-Sanjida/photos/Aaj-Sajeya.mp3",
 
   // ─── 🗺️ BIG MAP (iframe) — goo.gl / Share link YAHAN NAHI; embed URL ya query niche ───
   // mapsLink (events) = https://maps.app.goo.gl/... OK for "Navigate" button
@@ -106,19 +106,19 @@ export const WEDDING_CONFIG = {
       year: "july 2025",
       title: "First Meeting",
       description: "Our families introduced us, and from our very first conversation, we knew there was a special bond. A connection built on mutual respect and shared values.",
-      image: "/photos/1.png",
+      image: "/Altaf-Weds-Sanjida/photos/1.png",
     },
     {
       year: "august 2025",
       title: "The Proposal",
       description: "With the blessings of our parents, we formally agreed to unite our lives. It was a beautiful evening surrounded by close family, marking our path forward.",
-      image: "/photos/2.png",
+      image: "/Altaf-Weds-Sanjida/photos/2.png",
     },
     {
       year: "september 2025",
       title: "The Engagement",
       description: "We celebrated our traditional ring exchange ceremony. A promise to support, care, and build a beautiful home together under Allah's grace.",
-      image: "/photos/3.jpeg",
+      image: "/Altaf-Weds-Sanjida/photos/3.jpeg",
     },
   ],
 
@@ -133,7 +133,7 @@ export const WEDDING_CONFIG = {
       venue: "Mukhi Residency",
       address: "B-204 Mukhi Residency near Ramol Bus Stad ramol, Ahmedabad, Gujarat 382449",
       mapsLink: "https://maps.app.goo.gl/GdLwWATfCWf8UrpGA",
-      image: "/photos/haldi.png",
+      image: "/Altaf-Weds-Sanjida/photos/haldi.png",
       description:
         "Join us for a joyful Haldi ceremony filled with love, laughter, blessings, and the vibrant traditions that begin our wedding celebrations.",
     },
@@ -146,7 +146,7 @@ export const WEDDING_CONFIG = {
       venue: "Jhulta minar, Bibiji MasJid",
       address: "Jhulta Minar, Bibiji Masjid, Gomtipur, Ahmedabad.",
       mapsLink: "https://maps.app.goo.gl/WA5CuZPKHErBw4Xn6",
-      image: "/photos/nikah.png",
+      image: "/Altaf-Weds-Sanjida/photos/nikah.png",
       description: "In accordance with Sunnah, we will execute our Nikah contract. We highly request your presence and prayers for our new beginning.",
     },
     {
@@ -158,7 +158,7 @@ export const WEDDING_CONFIG = {
       venue: "Mukhi Residency Ground",
       address: "B-204 Mukhi Residency near Ramol Bus Stad ramol, Ahmedabad, Gujarat 382449",
       mapsLink: "https://maps.app.goo.gl/GdLwWATfCWf8UrpGA",
-      image: "/photos/walima.png",
+      image: "/Altaf-Weds-Sanjida/photos/walima.png",
       description: "The groom's family invites you to join them for a luxury banquet dinner to celebrate the union. May Allah bless our gathering.",
     },
   ],
