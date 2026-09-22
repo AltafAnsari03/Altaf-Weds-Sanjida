@@ -38,7 +38,7 @@ export default function RoyalDoorIntro({
     <AnimatePresence>
       {phase !== "exited" && (
         <motion.div
-          className="fixed inset-0 z-50 flex flex-col items-center justify-center overflow-hidden royal-intro-bg px-4"
+          className="fixed inset-0 z-50 flex flex-col items-center justify-start md:justify-center overflow-hidden royal-intro-bg px-4 pt-3 md:pt-0"
           exit={{ opacity: 0 }}
           transition={{ duration: 0.85, ease: [0.16, 1, 0.3, 1] }}
         >
@@ -55,7 +55,7 @@ export default function RoyalDoorIntro({
             animate={{ opacity: 1, y: 0 }}
             className="relative z-20 text-center mb-5 md:mb-8 max-w-lg"
           >
-            <div className="flex justify-center pt-8 mb-4">
+            <div className="flex justify-center pt-5 md:pt-14 mb-2 md:mb-4">
   <img
     src="/Altaf-Weds-Sanjida/logo.png"
     alt="Wedding Logo"
@@ -91,7 +91,7 @@ export default function RoyalDoorIntro({
                 ))}
               </div>
 
-              <div className="relative min-h-[300px] md:min-h-[340px] rounded-t-[2.5rem] overflow-hidden border-2 border-gold-500/35 bg-luxury-black shadow-[0_25px_80px_rgba(0,0,0,0.9),0_0_80px_rgba(117,96,122,0.08)]">
+              <div className="relative min-h-[230px] md:min-h-[340px] rounded-t-[2.5rem] overflow-hidden border-2 border-gold-500/35 bg-luxury-black shadow-[0_25px_80px_rgba(0,0,0,0.9),0_0_80px_rgba(117,96,122,0.08)]">
                 {/* Chamber behind doors — no date, only royal welcome */}
                 <div className="absolute inset-0 z-0 flex items-center justify-center bg-[radial-gradient(ellipse_at_center,#302432_0%,#130E15_70%)]">
                   <motion.div
@@ -179,7 +179,7 @@ export default function RoyalDoorIntro({
             </div>
           </div>
 
-          <div className="relative z-30 mt-8 min-h-[80px] flex flex-col items-center">
+          <div className="relative z-30 mt-2 md:mt-8 min-h-[60px] md:min-h-[80px] flex flex-col items-center">
             <AnimatePresence mode="wait">
               {phase === "closed" && (
                 <motion.div
