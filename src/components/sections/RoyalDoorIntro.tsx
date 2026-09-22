@@ -53,7 +53,7 @@ export default function RoyalDoorIntro({
           <motion.div
             initial={{ opacity: 0, y: -16 }}
             animate={{ opacity: 1, y: 0 }}
-            className="relative z-20 text-center mb-5 md:mb-8 max-w-lg"
+            className="relative z-20 text-center mb-2 md:mb-8 max-w-lg"
           >
             <div className="flex justify-center pt-0 mb-1 md:pt-14 md:mb-4">
   <img
@@ -91,7 +91,7 @@ export default function RoyalDoorIntro({
                 ))}
               </div>
 
-              <div className="relative h-[clamp(190px,34vh,230px)] md:h-[340px] rounded-t-[2.5rem] overflow-hidden border-2 border-gold-500/35 bg-luxury-black shadow-[0_25px_80px_rgba(0,0,0,0.9),0_0_80px_rgba(117,96,122,0.08)]">
+              <div className="relative h-[clamp(150px,26vh,220px)] md:h-[340px] rounded-t-[2.5rem] overflow-hidden border-2 border-gold-500/35 bg-luxury-black shadow-[0_25px_80px_rgba(0,0,0,0.9),0_0_80px_rgba(117,96,122,0.08)]">
                 {/* Chamber behind doors — no date, only royal welcome */}
                 <div className="absolute inset-0 z-0 flex items-center justify-center bg-[radial-gradient(ellipse_at_center,#302432_0%,#130E15_70%)]">
                   <motion.div
@@ -179,7 +179,7 @@ export default function RoyalDoorIntro({
             </div>
           </div>
 
-          <div className="relative z-30 mt-2 md:mt-8 min-h-[60px] md:min-h-[80px] flex flex-col items-center">
+          <div className="relative z-30 mt-0 md:mt-8 min-h-[52px] md:min-h-[80px] flex flex-col items-center">
             <AnimatePresence mode="wait">
               {phase === "closed" && (
                 <motion.div
@@ -187,7 +187,7 @@ export default function RoyalDoorIntro({
                   initial={{ opacity: 0, y: 8 }}
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -8 }}
-                  className="flex flex-col items-center gap-4"
+                  className="flex flex-col items-center gap-2 md:gap-4"
                 >
                   <p className="text-[10px] text-gold-200/80 font-sans tracking-[0.35em] uppercase">
                     Presenting The Royal Gates
@@ -197,7 +197,7 @@ export default function RoyalDoorIntro({
                     onClick={openDoors}
                     whileHover={{ scale: 1.04 }}
                     whileTap={{ scale: 0.97 }}
-                    className="royal-enter-btn relative px-10 py-3.5 rounded-sm font-cinzel text-[11px] tracking-[0.3em] uppercase cursor-pointer text-luxury-black"
+                    className="royal-enter-btn relative px-8 py-2.5 md:px-10 md:py-3.5 rounded-sm font-cinzel text-[10px] md:text-[11px] tracking-[0.25em] md:tracking-[0.3em] uppercase cursor-pointer text-luxury-black"
                   >
                     Open The Gates
                   </motion.button>
