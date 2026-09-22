@@ -55,13 +55,13 @@ export default function RoyalDoorIntro({
             animate={{ opacity: 1, y: 0 }}
             className="relative z-20 text-center mb-5 md:mb-8 max-w-lg"
           >
-            <div className="flex justify-center mb-4">
-              <img
-                src="/Altaf-Weds-Sanjida/logo.png"
-                alt="Wedding Logo"
-                className="w-32 h-32 object-contain"
-              />
-            </div>
+            <div className="flex justify-center pt-8 mb-4">
+  <img
+    src="/Altaf-Weds-Sanjida/logo.png"
+    alt="Wedding Logo"
+    className="w-24 h-24 sm:w-32 sm:h-32 object-contain"
+  />
+</div>
             <p className="text-[10px] text-gold-300/50 font-sans tracking-[0.25em] uppercase mt-3 mb-2">
               You Are Cordially Invited
             </p>
