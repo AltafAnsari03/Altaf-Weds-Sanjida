@@ -1,0 +1,186 @@
+// ═══════════════════════════════════════════════════════════════════════════════
+//  WEDDING WEBSITE — SAB KUCH YAHIN SE BADLO (ek hi file)
+//  Easy wizard: project folder mein terminal →  node configure.js
+// ═══════════════════════════════════════════════════════════════════════════════
+//
+//  ✏️ DULHA / DULHAN — SIRF YAHAN 2 NAAM BADLO (site + WhatsApp RSVP sab update)
+//
+export const COUPLE_NAMES = {
+  groom: "Altaf Ansari",
+  bride: "Sanjida Shaikh",
+} as const;
+
+/** Apni couple photo — file: public/photos/couple-family.png */
+export const MAIN_COUPLE_PHOTO = "/photos/couple-family.png";
+
+export function getCoupleLabel() {
+  return `${COUPLE_NAMES.groom} & ${COUPLE_NAMES.bride}`;
+}
+
+/** WhatsApp RSVP message — names auto from COUPLE_NAMES */
+export function formatRsvpWhatsappMessage(fields: {
+  name: string;
+  guests: number;
+  attendance: string;
+  notes: string;
+}) {
+  const couple = getCoupleLabel();
+  const notes = fields.notes.trim() || "None";
+  return (
+    `Assalamu Alaikum! I would like to RSVP for the wedding of ${couple}.\n\n` +
+    `*Name:* ${fields.name}\n` +
+    `*Number of Guests:* ${fields.guests}\n` +
+    `*Attendance:* ${fields.attendance}\n` +
+    `*Special Wishes/Dietary:* ${notes}\n\n` +
+    `Thank you!`
+  );
+}
+
+//
+//  🎵 MUSIC
+//     • Apni file: public/music/song.mp3  →  musicUrl: "/music/song.mp3"
+//     • Ya koi online direct MP3 link paste karo
+//
+//  📷 PHOTOS (gallery, story, events, ogImage)
+//     • Local: public/photos/1.jpg  →  src: "/photos/1.jpg"
+//     • Online: image ka direct URL (Copy image address)
+//     • gallery[] = website photo grid | story[].image = timeline | events[].image = event card
+//
+//  🗺️ MAPS
+//     • mapsEmbedUrl = bada map (Venue section) — Google Maps → Share → Embed a map → src copy
+//     • events[].mapsLink = har event ka Directions button — Share → Copy link
+//     • events[].venue + address = naam aur poora address
+//
+// ═══════════════════════════════════════════════════════════════════════════════
+
+export const WEDDING_CONFIG = {
+  // ─── Site title (auto from COUPLE_NAMES upar) ───
+  title: `The Wedding of ${COUPLE_NAMES.groom} & ${COUPLE_NAMES.bride}`,
+  description: `You are cordially invited to celebrate the union of ${COUPLE_NAMES.groom} & ${COUPLE_NAMES.bride}. Discover event details, schedule, RSVP, and venue directions.`,
+  ogImage: MAIN_COUPLE_PHOTO, // WhatsApp / link share preview
+  siteUrl: "https://altaf-sanjida-wedding.vercel.app",
+
+  groom: {
+    name: COUPLE_NAMES.groom,
+    fullname: "Altaf Ansari",
+    family: {
+      father: "Mr. Ayaz Ahmed Ansari",
+      mother: "Mrs. KausarBanu Ansari",
+      intro: "Grandson of Asfaque Ahmed & Late nazmabanu Ansari",
+    },
+  },
+  bride: {
+    name: COUPLE_NAMES.bride,
+    fullname: "Sanjida Shaikh",
+    family: {
+      father: "Mr. Mo. Salim Shaikh",
+      mother: "Mrs. Sufiya Shaikh",
+      intro: "Granddaughter of Late Mo. Hussain Shaikh & Late Sabera Shaikh",
+    },
+  },
+
+  quranicQuote: {
+    arabic: "وَمِنْ آيَاتِهِ أَنْ خَلَقَ لَكُم مِّنْ أَنفُسِكُمْ أَزْوَاجًا لِّتَسْكُنُوا إِلَيْهَا وَجَعَلَ بَيْنَكُم مَّوَدَّةً وَرَحْمَةً",
+    translation: "And among His signs is that He created for you spouses from among yourselves that you may find tranquility in them; and He placed between you affection and mercy.",
+    surah: "Surah Ar-Rum [30:21]",
+  },
+
+  // ─── Date (countdown + scratch reveal) ───
+  eventDate: "2026-12-11T16:00:00+05:30", // ISO: 2026-12-11T16:00:00+05:30
+  eventDateDisplay: "Friday 11 December 2026",
+
+  // ─── 🎵 BACKGROUND MUSIC (Shukran Allah — Dropbox; dl=1 for playback) ───
+  musicUrl: "/photos/Aaj-Sajeya.mp3",
+
+  // ─── 🗺️ BIG MAP (iframe) — goo.gl / Share link YAHAN NAHI; embed URL ya query niche ───
+  // mapsLink (events) = https://maps.app.goo.gl/... OK for "Navigate" button
+  mapsEmbedUrl:
+    "https://www.google.com/maps/search/?api=1&query=22.982230,72.656313",
+
+  // ─── RSVP WhatsApp (country code zaroori, e.g. +919168501790) ───
+  rsvpWhatsAppNumber: "+918758487993",
+
+  // ─── 📷 STORY TIMELINE PHOTOS ───
+  story: [
+    {
+      year: "july 2025",
+      title: "First Meeting",
+      description: "Our families introduced us, and from our very first conversation, we knew there was a special bond. A connection built on mutual respect and shared values.",
+      image: "/photos/1.png",
+    },
+    {
+      year: "august 2025",
+      title: "The Proposal",
+      description: "With the blessings of our parents, we formally agreed to unite our lives. It was a beautiful evening surrounded by close family, marking our path forward.",
+      image: "/photos/2.png",
+    },
+    {
+      year: "september 2025",
+      title: "The Engagement",
+      description: "We celebrated our traditional ring exchange ceremony. A promise to support, care, and build a beautiful home together under Allah's grace.",
+      image: "/photos/3.jpeg",
+    },
+  ],
+
+  // ─── Events + 🗺️ mapsLink per ceremony ───
+  events: [
+    {
+      id: "haldi",
+      title: "Haldi Ceremony",
+      subtitle: "A Celebration of Turmeric, Blessings & Joy",
+      date: "Thursday, December 10, 2026",
+      time: "06:00 PM onwards",
+      venue: "Mukhi Residency",
+      address: "B-204 Mukhi Residency near Ramol Bus Stad ramol, Ahmedabad, Gujarat 382449",
+      mapsLink: "https://maps.app.goo.gl/GdLwWATfCWf8UrpGA",
+      image: "/photos/haldi.png",
+      description:
+        "Join us for a joyful Haldi ceremony filled with love, laughter, blessings, and the vibrant traditions that begin our wedding celebrations.",
+    },
+    {
+      id: "nikah",
+      title: "Nikah Ceremony",
+      subtitle: "The Sacred Covenant",
+      date: "Friday, December 11, 2026",
+      time: "09:00 AM onwards",
+      venue: "Jhulta minar, Bibiji MasJid",
+      address: "Jhulta Minar, Bibiji Masjid, Gomtipur, Ahmedabad.",
+      mapsLink: "https://maps.app.goo.gl/WA5CuZPKHErBw4Xn6",
+      image: "/photos/nikah.png",
+      description: "In accordance with Sunnah, we will execute our Nikah contract. We highly request your presence and prayers for our new beginning.",
+    },
+    {
+      id: "walima",
+      title: "Walima Banquet",
+      subtitle: "The Feast of Blessing",
+      date: "Saturday, December 12, 2026",
+      time: "07:00 PM onwards",
+      venue: "Mukhi Residency Ground",
+      address: "B-204 Mukhi Residency near Ramol Bus Stad ramol, Ahmedabad, Gujarat 382449",
+      mapsLink: "https://maps.app.goo.gl/GdLwWATfCWf8UrpGA",
+      image: "/photos/walima.png",
+      description: "The groom's family invites you to join them for a luxury banquet dinner to celebrate the union. May Allah bless our gathering.",
+    },
+  ],
+
+  // ─── 📷 GALLERY — pehli photo apki (couple-family.png); aur add: public/photos/2.jpg ───
+  // gallery: [
+  //   {
+  //     src: MAIN_COUPLE_PHOTO,
+  //     caption: `${COUPLE_NAMES.bride}, ${COUPLE_NAMES.groom} & Family`,
+  //   },
+  //   // Nayi photo: public/photos/2.jpg rakho, niche copy-paste block jodo:
+  //   // { src: "/photos/2.jpg", caption: "Your caption" },
+  // ],
+
+  groomFamily: [
+    { relation: "Parents", names: ["Mr. Ayaz Ahmed Ansari", "Mrs. KausarBanu Ansari"] },
+    { relation: "Grandparents", names: ["Asfaque Ahmed Ansari", "Late Najmunisha Ansari"] },
+    { relation: "Siblings", names: ["mrs. Anjuman Zakir pathan (Sister)"] },
+  ],
+  brideFamily: [
+    { relation: "Parents", names: ["Mr. Mo. Salim Shaikh", "Mrs. Sufiya Shaikh"] },
+    { relation: "Grandparents", names: ["Late Mo. Hussain Shaikh", "Late Sabera Shaikh"] },
+    { relation: "Siblings", names: ["Mrs. Saeesta Pathan (Sister)", "Soban Shaikh (Brother)"] },
+  ],
+};
