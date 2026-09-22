@@ -59,7 +59,7 @@ export default function RoyalDoorIntro({
   <img
     src="/Altaf-Weds-Sanjida/logo.png"
     alt="Wedding Logo"
-    className="w-20 h-20 sm:w-32 sm:h-32 object-contain"
+    className="w-16 h-16 sm:w-32 sm:h-32 object-contain"
   />
 </div>
             <p className="text-[10px] text-gold-300/50 font-sans tracking-[0.25em] uppercase mt-3 mb-2">
