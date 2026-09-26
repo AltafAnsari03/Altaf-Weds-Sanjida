@@ -1,57 +1,17 @@
-// ═══════════════════════════════════════════════════════════════════════════════
-//  WEDDING WEBSITE — SAB KUCH YAHIN SE BADLO (ek hi file)
-//  Easy wizard: project folder mein terminal →  node configure.js
-// ═══════════════════════════════════════════════════════════════════════════════
-//
-//  ✏️ DULHA / DULHAN — SIRF YAHAN 2 NAAM BADLO (site + WhatsApp RSVP sab update)
+
 //
 export const COUPLE_NAMES = {
   groom: "Altaf Ansari",
   bride: "Sanjida Shaikh",
 } as const;
 
-/** Apni couple photo — file: public/photos/couple-family.png */
+
 export const MAIN_COUPLE_PHOTO = "/Altaf-Weds-Sanjida/photos/couple-family.png";
 
 export function getCoupleLabel() {
   return `${COUPLE_NAMES.groom} & ${COUPLE_NAMES.bride}`;
 }
 
-/** WhatsApp RSVP message — names auto from COUPLE_NAMES */
-export function formatRsvpWhatsappMessage(fields: {
-  name: string;
-  guests: number;
-  attendance: string;
-  notes: string;
-}) {
-  const couple = getCoupleLabel();
-  const notes = fields.notes.trim() || "None";
-  return (
-    `Assalamu Alaikum! I would like to RSVP for the wedding of ${couple}.\n\n` +
-    `*Name:* ${fields.name}\n` +
-    `*Number of Guests:* ${fields.guests}\n` +
-    `*Attendance:* ${fields.attendance}\n` +
-    `*Special Wishes/Dietary:* ${notes}\n\n` +
-    `Thank you!`
-  );
-}
-
-//
-//  🎵 MUSIC
-//     • Apni file: public/music/song.mp3  →  musicUrl: "/music/song.mp3"
-//     • Ya koi online direct MP3 link paste karo
-//
-//  📷 PHOTOS (gallery, story, events, ogImage)
-//     • Local: public/photos/1.jpg  →  src: "/photos/1.jpg"
-//     • Online: image ka direct URL (Copy image address)
-//     • gallery[] = website photo grid | story[].image = timeline | events[].image = event card
-//
-//  🗺️ MAPS
-//     • mapsEmbedUrl = bada map (Venue section) — Google Maps → Share → Embed a map → src copy
-//     • events[].mapsLink = har event ka Directions button — Share → Copy link
-//     • events[].venue + address = naam aur poora address
-//
-// ═══════════════════════════════════════════════════════════════════════════════
 
 export const WEDDING_CONFIG = {
   // ─── Site title (auto from COUPLE_NAMES upar) ───
@@ -97,8 +57,7 @@ export const WEDDING_CONFIG = {
   mapsEmbedUrl:
     "https://www.google.com/maps/search/?api=1&query=22.982230,72.656313",
 
-  // ─── RSVP WhatsApp (country code zaroori, e.g. +919168501790) ───
-  rsvpWhatsAppNumber: "+918758487993",
+
 
   // ─── 📷 STORY TIMELINE PHOTOS ───
   story: [
@@ -163,15 +122,7 @@ export const WEDDING_CONFIG = {
     },
   ],
 
-  // ─── 📷 GALLERY — pehli photo apki (couple-family.png); aur add: public/photos/2.jpg ───
-  // gallery: [
-  //   {
-  //     src: MAIN_COUPLE_PHOTO,
-  //     caption: `${COUPLE_NAMES.bride}, ${COUPLE_NAMES.groom} & Family`,
-  //   },
-  //   // Nayi photo: public/photos/2.jpg rakho, niche copy-paste block jodo:
-  //   // { src: "/photos/2.jpg", caption: "Your caption" },
-  // ],
+ 
 
   groomFamily: [
     { relation: "Parents", names: ["Mr. Ayaz Ahmed Ansari", "Mrs. KausarBanu Ansari"] },

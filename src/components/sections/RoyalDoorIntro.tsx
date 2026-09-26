@@ -57,7 +57,7 @@ export default function RoyalDoorIntro({
           >
             <div className="flex justify-center pt-0 mb-1 md:pt-14 md:mb-4">
   <img
-    src="/Altaf-Weds-Sanjida/logo.png"
+    src="/Altaf-Weds-Sanjida/logo.webp"
     alt="Wedding Logo"
     className="w-16 h-16 sm:w-32 sm:h-32 object-contain"
   />
